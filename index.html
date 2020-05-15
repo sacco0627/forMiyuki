@@ -13,15 +13,37 @@
       align-items: center;
     }
     .heart {
-     width: 150px;
-     height: 130px;
+     width: 250px;
+     height: 230px;
     }
     .message {
      width: 100%;
     }
+    h1{
+      position:absolute;
+      top: 0; 
+      right: 10px;
+      font-size: 20px;
+      color:bisque;
+      cursor: help;
+    }
+    #Hint{
+      position:absolute;
+      top: 40px; 
+      right: 40px; 
+      width: 300px;
+      opacity: 0;
+      transition: opacity 300ms ease-in;
+    }
+    #Hint.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <h1 id='hintText'>ひんと</h1>
+  <img src="answer.jpg" id='Hint'>
+  
   <div id='image-container'></div>
   <script>
     var src = document.getElementById('image-container')
@@ -37,6 +59,15 @@
     heartImg.onclick = function(){
       src.removeChild(heartImg)
       src.appendChild(messageImg)
+    }
+
+    var hintImage = document.getElementById('Hint');
+    var hintText = document.getElementById('hintText');
+    hintText.onmouseenter = function(){
+      hintImage.classList.add('visible')
+    }
+    hintText.onmouseleave = function(){
+      hintImage.classList.remove('visible')
     }
   </script>
   
