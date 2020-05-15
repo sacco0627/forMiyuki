@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="uft-8">
+  <title>Happy Birth Day Miyuki!</title>
+  <style>
+    body {
+      min-height: 100vh;
+      width:100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .heart {
+     width: 150px;
+     height: 130px;
+    }
+    .message {
+     width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id='image-container'></div>
+  <script>
+    var src = document.getElementById('image-container')
+    var heartImg = document.createElement("img");
+    heartImg.src = "click.jpg";
+    src.appendChild(heartImg)
+    heartImg.classList.add('heart')
+
+    var messageImg = document.createElement("img");
+    messageImg.src = "message.jpg";
+    messageImg.classList.add('message')
+
+    heartImg.onclick = function(){
+      src.removeChild(heartImg)
+      src.appendChild(messageImg)
+    }
+  </script>
+  
+</body>
+
+</html>
